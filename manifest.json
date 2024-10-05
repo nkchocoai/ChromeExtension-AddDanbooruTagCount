@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Add Danbooru Tag Count",
+    "version": "1.0",
+    "description": "Add post_count to the titles of Danbooru wiki links.",
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://danbooru.donmai.us/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "assets/tags.csv"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}
