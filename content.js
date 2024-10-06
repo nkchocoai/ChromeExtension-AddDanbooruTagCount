@@ -22,7 +22,7 @@ readCSV().then(csvData => {
     links.forEach(link => {
         const url = link.href;
 
-        const result = url.match(/^https:\/\/danbooru\.donmai\.us\/wiki_pages\/(.*)/);
+        const result = url.match(/^https:\/\/danbooru\.donmai\.us\/wiki_pages\/~?(.*)/);
         if (result) {
             const tag = decodeURIComponent(result[1]);
             const countStr = tag in csvData ? ` <small>(${csvData[tag].trim()})</small>` : "";
